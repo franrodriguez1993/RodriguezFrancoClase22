@@ -13,12 +13,16 @@ const schemaMensaje = new schema.Entity(
   {
     author: schemaAuthor,
   },
-  { idAttribute: "_id" }
+  { idAttribute: "id" }
 );
 //Esquema de los mensajes:
-const schemaMensajes = new schema.Entity("posts", {
-  mensajes: [schemaMensaje],
-});
+const schemaMensajes = new schema.Entity(
+  "posts",
+  {
+    mensajes: [schemaMensaje],
+  },
+  { idAttribute: "id" }
+);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
