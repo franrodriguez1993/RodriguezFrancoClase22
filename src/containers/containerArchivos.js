@@ -34,7 +34,7 @@ class containerArchivos {
     } else {
       id = listObjs.length + 1;
     }
-    const newObject = { ...object, _id: id, timestamp: timestamp };
+    const newObject = { ...object, id: id, timestamp: timestamp };
     listObjs.push(newObject);
 
     try {

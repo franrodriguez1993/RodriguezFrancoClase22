@@ -1,0 +1,41 @@
+[
+  {
+    "author": {
+      "email": "francojmrodriguez@gmail.com",
+      "nombre": "franco",
+      "apellido": "rodriguez",
+      "edad": "29",
+      "alias": "franquito",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/800px-Brad_Pitt_2019_by_Glenn_Francis.jpg"
+    },
+    "text": "hola juana!",
+    "id": 1,
+    "timestamp": "Sun Oct 02 2022"
+  },
+  {
+    "author": {
+      "email": "francojmrodriguez@gmail.com",
+      "nombre": "franco",
+      "apellido": "rodriguez",
+      "edad": "29",
+      "alias": "franquito",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/800px-Brad_Pitt_2019_by_Glenn_Francis.jpg"
+    },
+    "text": "todo bien?",
+    "id": 2,
+    "timestamp": "Sun Oct 02 2022"
+  },
+  {
+    "author": {
+      "email": "juana@gmail.com",
+      "nombre": "juana",
+      "apellido": "lopez",
+      "edad": "27",
+      "alias": "juanita",
+      "avatar": "https://www.cronista.com/files/image/478/478038/6320982be8754_360_480!.jpg?s=52ffc0203a6b79606007487507f8d922&d=1663081782"
+    },
+    "text": "hola fran!",
+    "id": 3,
+    "timestamp": "Sun Oct 02 2022"
+  }
+]

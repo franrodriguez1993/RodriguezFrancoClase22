@@ -1,6 +1,8 @@
 const express = require("express");
 require("dotenv").config();
 const util = require("util");
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //NORMALIZR:
 const normalizr = require("normalizr");
 const schema = normalizr.schema;
@@ -24,7 +26,7 @@ const schemaMensajes = new schema.Entity(
   { idAttribute: "id" }
 );
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const daoMsg = require("./dao/daoindex");
 
@@ -73,11 +75,22 @@ io.on("connection", async (socket) => {
 
   //Enviando mensajes al hacer login:
   const messagesList = await daoMsg.getAll();
-  const NM = normalizr.normalize(messagesList, schemaMensajes);
 
-  console.log(util.inspect(NM, true, 10, true));
+  const norma = { id: "1", mensajes: messagesList };
+
+  const normaledData = normalizr.normalize(norma, schemaMensajes);
+  // const DNM = normalizr.denormalize(NM.result, schemaMensajes, NM.entities);
+
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // console.log(util.inspect(NM, true, 10, true));
+  // console.log(messagesList);
+  // console.log(util.inspect(DNM, true, 10, true));
+
+  // console.log(`Tamaño normalizado: ${JSON.stringify(NM).length}`);
+
+  // console.log(`Tamaño desnormalizado: ${JSON.stringify(DNM).length}`);
   await messagesList.reverse();
-  io.sockets.emit("messages", messagesList);
+  io.sockets.emit("messages", normaledData);
   //
 
   //
